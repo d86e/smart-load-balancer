@@ -1,28 +1,23 @@
-/**
- * @file Main entry point for the load balancer package
- * @module load-balancer
- */
-
 import LoadBalancer from './loadBalancer.js';
 
-// Polyfill fetch for Node.js environment
-if (typeof globalThis.fetch === 'undefined') {
-    try {
-        globalThis.fetch = require('node-fetch');
-    } catch (err) {
-        console.warn('node-fetch is required for Node.js environment');
+(function () {
+    // 检测模块系统
+    const isBrowser = typeof window !== 'undefined';
+    const isAMD = typeof define === 'function' && define.amd;
+    const isCommonJS = typeof module === 'object' && typeof module.exports === 'object';
+
+    // 根据环境导出
+    if (isBrowser) {
+        // 浏览器环境 - 挂载到window
+        window.LoadBalancer = LoadBalancer;
+    } else if (isAMD) {
+        // AMD环境
+        define([], () => LoadBalancer);
+    } else if (isCommonJS) {
+        // CommonJS环境
+        module.exports = LoadBalancer;
     }
-}
+    // ESM环境默认支持
+})();
 
-/**
- * Creates a new LoadBalancer instance or returns existing one
- * @param {Array<string>} serverUrls - Array of server URLs
- * @param {Object} [config={}] - Configuration options
- * @returns {LoadBalancer} Load balancer instance
- */
-export function createLoadBalancer(serverUrls, config = {}) {
-    return new LoadBalancer(serverUrls, config);
-}
-
-// Export LoadBalancer class
-export { LoadBalancer };
+export default LoadBalancer;
