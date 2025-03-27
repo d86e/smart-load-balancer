@@ -29,7 +29,7 @@ export default entries.map(entry => {
                 sourcemap: true
             },
             {
-                file: `dist/${entry.outputPrefix}.mini.js`,
+                file: `dist/${entry.outputPrefix}.min.js`,
                 format: 'umd',
                 name: 'LoadBalancer',
                 exports: 'named',
