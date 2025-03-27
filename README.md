@@ -581,7 +581,7 @@ We welcome contributions of all kinds:
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/yourusername/smart-load-balancer.git
+   git clone https://github.com/d86e/smart-load-balancer.git
    ```
 2. Install dependencies:
    ```bash

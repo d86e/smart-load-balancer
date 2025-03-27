@@ -581,7 +581,7 @@ lb.on("healthCheck", (results) => {
 
 1. 克隆仓库：
    ```bash
-   git clone https://github.com/yourusername/smart-load-balancer.git
+   git clone https://github.com/d86e/smart-load-balancer.git
    ```
 2. 安装依赖：
    ```bash
