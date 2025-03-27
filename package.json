@@ -1,6 +1,6 @@
 {
   "name": "smart-load-balancer",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "type": "module",
   "description": "Modern web applications are becoming increasingly complex, with frontends directly interacting with multiple backend services becoming the norm. Traditional server-side load balancing cannot solve the multi-service routing problem on the browser side. Smart Load Balancer was born to solve this problem, providing lightweight, intelligent browser-side load balancing capabilities.",
   "main": "dist/index.mini.js",
